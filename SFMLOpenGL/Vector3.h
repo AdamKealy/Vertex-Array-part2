@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string>
 
-class Vector3
+class MyVector3
 {
 public:
 
@@ -13,10 +13,10 @@ public:
 	void  setY(double value);
 	void  setZ(double value);
 
-	Vector3();
+	MyVector3();
 
 		// Constructor 2
-	Vector3(double x1, double y1, double z1);
+	MyVector3(double x1, double y1, double z1);
 
 	double Length();
 	double LengthSquared();
@@ -24,11 +24,11 @@ public:
 	void Normalise();
 
 
-	Vector3 operator +(const Vector3 right) const;
-	Vector3 operator -(const Vector3 right) const;
-	Vector3 operator *(const Vector3 scalar) const;
-	double operator *(Vector3 V1);
-	Vector3 operator ^(const Vector3 right) const;
+	MyVector3 operator +(const MyVector3 right) const;
+	MyVector3 operator -(const MyVector3 right) const;
+	MyVector3 operator *(const MyVector3 scalar) const;
+	double operator *(MyVector3 V1);
+	MyVector3 operator ^(const MyVector3 right) const;
 
 	std::string toString();
 

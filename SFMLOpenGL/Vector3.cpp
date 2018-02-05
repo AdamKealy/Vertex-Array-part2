@@ -1,43 +1,43 @@
 #include "Vector3.h"
 
-double Vector3::getX()
+double MyVector3::getX()
 {
 	 return X;
 }
 
-void Vector3::setX(double value)
+void MyVector3::setX(double value)
 {
 	X = value;
 }
 
-double Vector3::getY()
+double MyVector3::getY()
 {
 	return Y;
 }
 
-void Vector3::setY(double value)
+void MyVector3::setY(double value)
 {
 	Y = value;
 }
 
-double Vector3::getZ()
+double MyVector3::getZ()
 {
 	return Z;
 }
 
-void Vector3::setZ(double value)
+void MyVector3::setZ(double value)
 {
 	Z = value;
 }
 
-Vector3::Vector3()
+MyVector3::MyVector3()
 {
 	X = 0.0f;
 	Y = 0.0f;
 	Z = 0.0f;
 }
 
-Vector3::Vector3(double x1, double y1, double z1)
+MyVector3::MyVector3(double x1, double y1, double z1)
 {
 	// To allow other values for X, Y and Z to be declared
 	X = x1;
@@ -45,19 +45,19 @@ Vector3::Vector3(double x1, double y1, double z1)
 	Z = z1;
 }
 
-double Vector3::Length()
+double MyVector3::Length()
 {
 	// A method to return the length of the vector
 	return sqrt(X * X + Y * Y + Z * Z);
 }
 
-double Vector3::LengthSquared()
+double MyVector3::LengthSquared()
 {
 	// A method to return the length squared of the vector
 	return (X * X + Y * Y + Z * Z);
 }
 
-void Vector3::Normalise()
+void MyVector3::Normalise()
 {
 	// A method to reduce the length of the vector to 1.0 
 	// keeping the direction the same
@@ -70,33 +70,33 @@ void Vector3::Normalise()
 	}
 }
 
-Vector3 Vector3::operator+(const Vector3 right) const
+MyVector3 MyVector3::operator+(const MyVector3 right) const
 {
-	return Vector3(X + right.X, Y + right.Y, Z + right.Z);
+	return MyVector3(X + right.X, Y + right.Y, Z + right.Z);
 }
 
-Vector3 Vector3::operator-(const Vector3 right) const
+MyVector3 MyVector3::operator-(const MyVector3 right) const
 {
-	return Vector3(X - right.X, Y - right.Y, Z - right.Z);
+	return MyVector3(X - right.X, Y - right.Y, Z - right.Z);
 }
 
-Vector3 Vector3::operator*(const Vector3 scalar) const
+MyVector3 MyVector3::operator*(const MyVector3 scalar) const
 {
-	return Vector3(X * scalar.X, Y * scalar.Y, Z * scalar.Z);
+	return MyVector3(X * scalar.X, Y * scalar.Y, Z * scalar.Z);
 }
 
-double Vector3::operator*(Vector3 V1)
+double MyVector3::operator*(MyVector3 V1)
 {
 	// An overloaded operator * to return the scalar product of 2 vectors
 	return (V1.X * X + V1.Y * Y + V1.Z * Z);
 }
 
-Vector3 Vector3::operator^(const Vector3 right) const
+MyVector3 MyVector3::operator^(const MyVector3 right) const
 {
-	return Vector3();
+	return MyVector3();
 }
 
-std::string Vector3::toString()
+std::string MyVector3::toString()
 {
 	char tmpbuf[256];
 	sprintf_s(tmpbuf, "[%g, %g, %g]", X, Y, Z);

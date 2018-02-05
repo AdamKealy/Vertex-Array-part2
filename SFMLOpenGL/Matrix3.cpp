@@ -13,7 +13,7 @@ Matrix3::Matrix3()
 	A33 = 0.0;
 }
 
-Matrix3::Matrix3(Vector3 Row1, Vector3 Row2, Vector3 Row3)
+Matrix3::Matrix3(MyVector3 Row1, MyVector3 Row2, MyVector3 Row3)
 {
 	// To allow 3 rows of vectors to be declared as a matrix
 	A11 = Row1.getX();
@@ -41,10 +41,10 @@ Matrix3::Matrix3(double _A11, double _A12, double _A13, double _A21, double _A22
 	A33 = _A33;
 }
 
-Vector3 Matrix3::operator*(Vector3 V1)
+MyVector3 Matrix3::operator*(MyVector3 V1)
 {
 	// An overloaded operator * to return the  product of the matrix by a vector
-	return   Vector3(A11 * V1.getX() + A12 * V1.getY() + A13 * V1.getZ(),
+	return   MyVector3(A11 * V1.getX() + A12 * V1.getY() + A13 * V1.getZ(),
 		A21 * V1.getX() + A22 * V1.getY() + A23 * V1.getZ(),
 		A31 * V1.getX() + A32 * V1.getY() + A33 * V1.getZ());
 }
@@ -120,33 +120,33 @@ double Matrix3::Determinant(Matrix3 M1)
 	return M1.A11 * M1.A22 * M1.A33 - M1.A11 * M1.A32 * M1.A23 + M1.A21 * M1.A32 * M1.A13 - M1.A31 * M1.A22 * M1.A13 + M1.A31 * M1.A12 * M1.A23 - M1.A21 * M1.A12 * M1.A33;
 }
 
-Vector3 Matrix3::Row(int i)
+MyVector3 Matrix3::Row(int i)
 {
 	// a method to return as Row as vector3 0 == first row, default == last row
 	switch (i)
 	{
 	case 0:
-		return  Vector3(A11, A12, A13);
+		return  MyVector3(A11, A12, A13);
 	case 1:
-		return  Vector3(A21, A22, A23);
+		return  MyVector3(A21, A22, A23);
 	case 2:
 	default:
-		return Vector3(A31, A32, A33);
+		return MyVector3(A31, A32, A33);
 	}
 }
 
-Vector3 Matrix3::Column(int i)
+MyVector3 Matrix3::Column(int i)
 {
 	// a method to return as column as vector3 0 == first column, default == last column
 	switch (i)
 	{
 	case 0:
-		return Vector3(A11, A21, A31);
+		return MyVector3(A11, A21, A31);
 	case 1:
-		return Vector3(A12, A22, A32);
+		return MyVector3(A12, A22, A32);
 	case 2:
 	default:
-		return Vector3(A13, A23, A33);
+		return MyVector3(A13, A23, A33);
 	}
 }
 
